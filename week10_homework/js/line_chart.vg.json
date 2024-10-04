@@ -57,7 +57,7 @@
             "type": "quantitative", 
             "axis": {"title": "Number of Arrivals", "tickCount": 10}
           }, 
-          "color": {"value": "#D2E0FB"}, 
+          "color": {"value": "#8EACCD"}, 
           "tooltip":[
             {"field": "selected_state", "type": "nominal", "title": "State of Arrival"},
             {"field": "date", "type": "temporal", "title": "Month", "timeUnit": "month", "format": "%B"},
