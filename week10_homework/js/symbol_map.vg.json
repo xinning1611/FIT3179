@@ -44,7 +44,7 @@
                 }, 
                 "tooltip": [
                     {"field": "country", "type": "nominal", "title": "Country"},
-                    {"field": "total_arrival", "type": "quantitative", "title": "Arrival Counts"}
+                    {"field": "total_arrival", "type": "quantitative", "format": ",",  "title": "Total Arrivals"}
                 ]
             }
         }
