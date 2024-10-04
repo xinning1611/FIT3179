@@ -21,7 +21,7 @@
     </div>
 
     <div class = "chart">
-      <div id = "bar_chart"></div> 
+      <div id = "line_chart"></div> 
     </div>
   </div>
 
@@ -31,8 +31,8 @@
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
   
-  var specVis2 = "js/bar_chart.vg.json";
-  vegaEmbed('#bar_chart', specVis2).then(function(result) {
+  var specVis2 = "js/line_chart.vg.json";
+  vegaEmbed('#line_chart', specVis2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
