@@ -3,7 +3,7 @@
     "width": 800,
     "height": 500,
     "title": {"text": "Monthly Foreign Arrivals to Malaysia by State", "fontSize": 15},
-    "data": {"url": "../data/arrivals_by_state.csv"}, 
+    "data": {"url": "https://raw.githubusercontent.com/xinning1611/FIT3179/refs/heads/main/week10_homework/data/arrivals_by_state.csv"}, 
     "params": [{
         "name": "state_selection", 
         "bind": {
