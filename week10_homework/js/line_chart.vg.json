@@ -33,7 +33,8 @@
     "layer": [
       {
         "mark": {
-          "type": "bar"
+          "type": "line",
+          "point": true
         },
         "encoding": {
           "x": {
