@@ -39,7 +39,8 @@
                         "grid": false, 
                         "labelAlign": "center",  
                         "labelAngle": 0,
-                        "tickOffset": 0.5  
+                        "tickOffset": 0.5, 
+                        "format": "%B"
                     },
                     "title": "Month"
                 }, 
@@ -51,7 +52,7 @@
                 }, 
                 "color": {"value": "#D2E0FB"}, 
                 "tooltip":[
-                    {"field": "date", "type": "temporal", "title": "Month", "timeUnit": "month"},
+                    {"field": "date", "type": "temporal", "title": "Month", "timeUnit": "month", "format": "%B"},
                     {"aggregate": "sum", "field": "total_arrivals", "type": "quantitative", "title": "Total Arrivals"}
                 ]
             }
