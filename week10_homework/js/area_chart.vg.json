@@ -1,0 +1,86 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json", 
+    "width": 800,
+    "height": 500,
+    "title": {"text": "Monthly Foreign Arrivals to Malaysia by State", "fontSize": 15},
+    "data": {"url": "https://raw.githubusercontent.com/xinning1611/FIT3179/refs/heads/main/week10_homework/data/arrivals_by_state.csv"}, 
+    "params": [{
+        "name": "state_selection", 
+        "bind": {
+            "input": "select", 
+            "options": [
+                null, "Kedah", "Pulau Pinang", "Johor", "Perlis", "Sarawak", 
+                "Selangor", "Sabah", "Perak" , "Kelantan", "Melaka", 
+                "W.P. Labuan", "Negeri Sembilan", "Pahang", "Terengganu"
+            ], 
+            "labels": [
+                "Show All", "Kedah", "Pulau Pinang", "Johor", "Perlis", "Sarawak", 
+                "Selangor", "Sabah", "Perak" , "Kelantan", "Melaka", 
+                "W.P. Labuan", "Negeri Sembilan", "Pahang", "Terengganu"
+            ], 
+            "name": "Select State: "
+        }
+    }],
+    "transform": [{
+        "filter": "state_selection == null || datum.soe == state_selection"
+    }],
+    "layer": [
+        {
+            "mark": {
+                "type": "bar"
+            },
+            "encoding": {
+                "x": {
+                    "field": "date", 
+                    "type": "ordinal",  
+                    "timeUnit": "month", 
+                    "axis": {
+                        "title": "Month",
+                        "grid": false, 
+                        "labelAlign": "center",  
+                        "labelAngle": 0,
+                        "tickOffset": 0.5  
+                    },
+                    "title": "Month"
+                }, 
+                "y": {
+                    "aggregate": "sum",  
+                    "field": "total_arrivals", 
+                    "type": "quantitative", 
+                    "axis": {"title": "Number of Arrivals", "tickCount": 10}
+                }, 
+                "color": {"value": "#D2E0FB"}, 
+                "tooltip":[
+                    {"field": "date", "type": "temporal", "title": "Month", "timeUnit": "month"},
+                    {"aggregate": "sum", "field": "total_arrivals", "type": "quantitative", "title": "Total Arrivals"}
+                ]
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "center",
+                "baseline": "bottom",
+                "dy": -5  
+            },
+            "encoding": {
+                "x": {
+                    "field": "date", 
+                    "type": "ordinal",  
+                    "timeUnit": "month"
+                },
+                "y": {
+                    "aggregate": "sum", 
+                    "field": "total_arrivals", 
+                    "type": "quantitative"
+                },
+                "text": {
+                    "aggregate": "sum", 
+                    "field": "total_arrivals", 
+                    "type": "quantitative"
+                },
+                "color": {"value": "black"}  
+            }
+        }
+    ]
+}
