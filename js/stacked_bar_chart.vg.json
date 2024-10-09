@@ -1,0 +1,68 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 500,
+    "title": {"text": "Gender Breakdown of Top 10 Arrival Countries", "fontSize": 15},
+    "data": {"url": "https://raw.githubusercontent.com/xinning1611/FIT3179/refs/heads/main/data_visualization_2/data/top10_gender_breakdown.csv"}, 
+    "layer": [
+      {
+       "mark": "bar",
+        "encoding": {
+          "x": {
+            "aggregate": "sum",
+            "field": "arrivals", 
+            "type": "quantitative",
+            "title": "Total Arrivals", 
+            "scale": {"domain": [0, 40000000]}, 
+            "axis": {"tickCount": 10, "format": "~s"}
+          },
+          "y": {
+            "field": "country",
+            "type": "nominal",
+            "title": "Country of Visitors",
+            "sort": "-x"
+          },
+          "color": {
+            "field": "gender",
+            "type": "nominal",
+            "title": "Gender",
+            "scale": {"range": ["#FFC0D9", "#C4D7FF"]}
+          },
+          "tooltip": [
+            {"field": "country", "type": "nominal", "title": "Country"},
+            {"field": "gender", "type": "nominal", "title": "Gender"},
+            {"field": "arrivals", "type": "quantitative", "format": ",", "title": "Total Arrivals"}
+          ]
+        }
+      }, 
+      {
+        "mark": {
+          "type": "text",
+          "baseline": "middle",
+          "align": "center",
+          "dx": 30
+        }, 
+        "encoding": {
+          "x": {
+            "aggregate": "sum",
+            "field": "arrivals", 
+            "type": "quantitative",
+            "title": "Total Arrivals"
+          },
+          "y": {
+            "field": "country",
+            "type": "nominal",
+            "title": "Country of Visitors",
+            "sort": "-x"
+          },
+          "text": {
+            "field": "total_arrivals", 
+            "type": "quantitative", 
+            "format": ","
+          }
+        }
+      }
+    ]
+
+  }
+  
