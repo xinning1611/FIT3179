@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Analysis of Foreign Arrivals in Malaysia</title>
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    
+    <!-- CSS file -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+    
+</head>
+<body>
+
+  <h1>Analysis of Foreign Arrivals in Malaysia</h1>
+  <h2>January 2020 to June 2024</h2>
+  
+  <div class = "container">
+    <div class = "chart">
+      <div id = "symbol_map"></div> 
+    </div>
+
+    <div class = "chart">
+      <div id = "stacked_bar_chart"></div> 
+    </div>
+
+    <div class = "chart">
+      <div id = "donut_chart"></div> 
+    </div>
+
+    <div class = "chart">
+      <div id = "bump_chart"></div> 
+    </div>
+
+    <div class = "chart">
+      <div id = "line_chart"></div> 
+    </div>
+
+    <h3>
+      Created and Designed By: Chew Xin Ning<br>
+      Updated On: 9th October 2024<br>
+      Data Sourced From: The Immigration Department of Malaysia<br>
+      Data Source Link: <a href="https://data.gov.my/data-catalogue/arrivals_soe" target="_blank">https://data.gov.my/data-catalogue/arrivals_soe</a>
+    </h3>
+
+  </div>
+
+<script type="text/javascript">
+  var specVisSymbolMap = "js/symbol_map.vg.json";
+  vegaEmbed('#symbol_map', specVisSymbolMap).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  var specVisStacked = "js/stacked_bar_chart.vg.json";
+  vegaEmbed('#stacked_bar_chart', specVisStacked).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  var specVisDonut = "js/donut_chart.vg.json";
+  vegaEmbed('#donut_chart', specVisDonut).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  var specVisBump = "js/bump_chart.vg.json";
+  vegaEmbed('#bump_chart', specVisBump).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  
+  var specVisLine = "js/line_chart.vg.json";
+  vegaEmbed('#line_chart', specVisLine).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 500,
+    "title": {
+      "text": "State Popularity for Foreign Arrivals in Malaysia",
+      "fontSize": 15
+    },
+    "view": {
+      "stroke": null
+    }, 
+    "data": {
+      "url": "https://raw.githubusercontent.com/xinning1611/FIT3179/refs/heads/main/data_visualization_2/data/arrivals_by_state.csv"
+    },
+    "layer": [
+      {
+        "params": [{
+          "name": "state_highlight", 
+          "select": {"type": "point", "fields": ["soe"]}, 
+          "bind": "legend"
+        }],
+        "mark": {
+          "type": "arc",
+          "innerRadius": 120
+        },
+        "encoding": {
+          "theta": {
+            "field": "total_arrivals",
+            "type": "quantitative",
+            "aggregate": "sum"
+          },
+          "color": {
+            "field": "soe",
+            "type": "nominal",
+            "title": "State of Arrival",
+            "scale": {
+              "domain": ["Johor", "Kedah", "Kelantan", "Melaka", "Negeri Sembilan", 
+                                "Pahang", "Perak", "Perlis", "Pulau Pinang", 
+                                "Sabah", "Sarawak", "Selangor", "Terengganu", "W.P. Labuan"],
+              "range": [
+                "#c5b0d5",
+                "#EBD3F8",
+                "#DEE5D4",
+                "#FCDC94", 
+                "#CB80AB",
+                "#5A72A0",
+                "#E78F81",
+                "#FFC6C6",
+                "#FFF4B5",
+                "#F7DCB9",
+                "#E9EFEC",
+                "#AEC7E8",
+                "#FFC7ED",
+                "#F8C794",
+                "#E1ACAC"
+              ]
+            }
+          },
+          "opacity": {
+            "condition": {"param": "state_highlight", "value": 1}, 
+            "value": 0.2
+          }, 
+          "tooltip": [
+            {
+              "field": "soe",
+              "type": "nominal",
+              "title": "State of Arrival"
+            },
+            {
+              "aggregate": "sum",
+              "field": "total_arrivals",
+              "type": "quantitative",
+              "format": ",",
+              "title": "Total Arrivals"
+            }
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "center",
+          "baseline": "middle",
+          "fontSize": 15,
+          "color": "dimgrey",
+          "font": "Arial",
+          "dy": -5
+        },
+        "encoding": {
+          "text": {
+            "aggregate": "sum",
+            "field": "total_arrivals",
+            "type": "quantitative",
+            "format": ",",
+            "title": "Total Arrivals"
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "center",
+          "baseline": "middle",
+          "dy": 15,
+          "fontSize": 15,
+          "font": "Arial",
+          "color": "dimgrey"
+        },
+        "encoding": {
+          "text": {
+            "value": "Total Arrivals"
+          }
+        }
+      }
+    ]
+  }
+  
