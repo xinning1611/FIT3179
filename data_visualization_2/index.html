@@ -16,25 +16,33 @@
   <h1>Analysis of Foreign Arrivals in Malaysia</h1>
   <h2>January 2020 to June 2024</h2>
   
-  <div class = "container">
-    <div class = "chart">
-      <div id = "symbol_map"></div> 
+  <div class="container">
+    <div class="chart">
+      <div id="symbol_map"></div> 
     </div>
 
-    <div class = "chart">
-      <div id = "stacked_bar_chart"></div> 
+    <div class="chart">
+      <div id="stacked_bar_chart"></div> 
     </div>
 
-    <div class = "chart">
-      <div id = "donut_chart"></div> 
+    <div class="chart">
+      <div id="donut_chart"></div> 
     </div>
 
-    <div class = "chart">
-      <div id = "bump_chart"></div> 
+    <div class="chart">
+      <div id="bump_chart"></div> 
     </div>
 
-    <div class = "chart">
-      <div id = "line_chart"></div> 
+    <!-- Line chart with description -->
+    <div class="chart">
+      <div id="line_chart"></div>
+      <!-- Description below the line chart -->
+      <div class="description">
+        <p><strong>Monthly Foreign Arrivals Trend (2020-2024):</strong></p>
+        <p>This chart illustrates the trends in foreign arrivals to Malaysia between January 2020 and June 2024. 
+          The impact of global events, such as the COVID-19 pandemic and subsequent recovery periods, can be observed. 
+          A sharp decline in arrivals is evident in 2020, followed by gradual recovery in subsequent years as international travel restrictions eased.</p>
+      </div>
     </div>
 
     <h3>
@@ -43,7 +51,6 @@
       Data Sourced From: The Immigration Department of Malaysia<br>
       Data Source Link: <a href="https://data.gov.my/data-catalogue/arrivals_soe" target="_blank">https://data.gov.my/data-catalogue/arrivals_soe</a>
     </h3>
-
   </div>
 
 <script type="text/javascript">
@@ -66,7 +73,6 @@
   vegaEmbed('#bump_chart', specVisBump).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
-  
   
   var specVisLine = "js/line_chart.vg.json";
   vegaEmbed('#line_chart', specVisLine).then(function(result) {
