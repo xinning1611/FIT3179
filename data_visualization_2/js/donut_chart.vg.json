@@ -1,14 +1,10 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 500,
-    "height": 500,
-    "title": {
-      "text": "State Popularity for Foreign Arrivals in Malaysia",
-      "fontSize": 15
-    },
+    "width": 350,
+    "height": 300,
     "view": {
       "stroke": null
-    }, 
+    },
     "data": {
       "url": "https://raw.githubusercontent.com/xinning1611/FIT3179/refs/heads/main/data_visualization_2/data/arrivals_by_state.csv"
     },
@@ -21,7 +17,9 @@
         }],
         "mark": {
           "type": "arc",
-          "innerRadius": 120
+          "innerRadius": 80, 
+          "stroke": "black", 
+          "strokeWidth": 1
         },
         "encoding": {
           "theta": {
@@ -40,7 +38,7 @@
               "range": [
                 "#c5b0d5",
                 "#EBD3F8",
-                "#DEE5D4",
+                "#F5E8DD",
                 "#FCDC94", 
                 "#CB80AB",
                 "#5A72A0",
@@ -48,12 +46,16 @@
                 "#FFC6C6",
                 "#FFF4B5",
                 "#F7DCB9",
-                "#E9EFEC",
-                "#AEC7E8",
-                "#FFC7ED",
+                "#EBE3D5",
+                "#FFDFD6",
+                "#A66E38",
                 "#F8C794",
                 "#E1ACAC"
               ]
+            }, 
+            "legend": {
+              "orient": "bottom", 
+              "columns": 5
             }
           },
           "opacity": {
@@ -71,7 +73,7 @@
               "field": "total_arrivals",
               "type": "quantitative",
               "format": ",",
-              "title": "Total Arrivals"
+              "title": "Visitor Counts"
             }
           ]
         }
@@ -92,7 +94,7 @@
             "field": "total_arrivals",
             "type": "quantitative",
             "format": ",",
-            "title": "Total Arrivals"
+            "title": "Visitor Counts"
           }
         }
       },
