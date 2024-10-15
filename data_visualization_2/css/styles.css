@@ -1,58 +1,166 @@
 body {
-    font-family: 'Arial', sans-serif;
-    font-size: 10px;
-    background-color: #EBF4F6;
-    /* background-image: url("../image/Picture4.png"); */
-    /* background-size: cover; 
+    width: 1000px; 
+    margin: 0 auto; 
+    background-color: #E5E1DA;
+    background-size: cover; 
+    background-position: top;
+    background-size: cover; 
     background-repeat: no-repeat; 
     background-attachment: fixed; 
-    background-position: bottom center;  */
+    background-position: bottom center; 
+    font-family: 'Arial', sans-serif;
+} 
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
 }
-h1 {
-    /* font-weight: bold; */
-    font-size: 50px;
+
+.card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.card-header {
+    background-color: #a50f15;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px 5px 0 0;
+    text-align: center;
+    font-size: 12;
+}
+
+.card-body {
+    font-size: 13px;
+    padding: 0px;
+    padding-bottom: 0px;
+    line-height: 1.5;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.flex-container {
+    display: flex;
+    text-align: justify;
+}
+
+h1 { 
+    font-weight: bold;
+    font-size: 40px; 
     margin-bottom: 10px;
     text-align: center;
-    font-family: nave;
+    font-family:'Times New Roman', Times, serif;
 }
 
 h2 {
     font-weight: bold;
     font-size: 20px;
     text-align: center;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Arial', sans-serif;
+} 
+
+h3 {
+    font-weight: bold;
+    font-size: 13px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+} 
+
+h4 {
+    font-weight:100;
+    font-size: 13px;
+    text-align: left;
+    font-family: 'Arial', sans-serif;
+    color: #B7B7B7;
+} 
+
+h4 {
+    font-weight:100;
+    font-size: 13px;
+    text-align: left;
+    font-family: 'Arial', sans-serif;
+    color: gray;
+} 
+
+.malaysia_text {
+    font-size: 13px;
+    color: #AB886D;
+    font-weight: bold;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    width: 90%;
-    max-width: 1300px;
-    max-height: 1200px;
-    margin: auto;
+.singapore_text {
+    font-size: 13px;
+    color: #A04747;
+    font-weight: bold;
 }
 
-.chart-row {
-    display: flex; 
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 40px;
-    width: 100%; 
+.australia_text {
+    font-size: 13px;
+    color: #A2D2DF;
+    font-weight: bold;
 }
 
-.chart {
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    
-    margin-bottom: 40px;
-    width: 90%; 
-    max-width: 1300px;
-    max-height: 1200px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.johor_text {
+    font-size: 13px;
+    color: #c5b0d5;
+    font-weight: bold;
+}
+
+.selangor_text {
+    font-size: 13px;
+    color: #FFDFD6;
+    font-weight: bold;
+}
+
+.sarawak_text {
+    font-size: 13px;
+    color: #EBE3D5;
+    font-weight: bold;
+}
+
+.kedah_text {
+    font-size: 13px;
+    color: #EBD3F8;
+    font-weight: bold;
+}
+
+.male_text {
+    font-size: 13px;
+    color: #C4D7FF;
+    font-weight: bold;
+}
+
+.female_text {
+    font-size: 13px;
+    color: #FFC0D9;
+    font-weight: bold;
+}
+
+.sembilan_text {
+    font-size: 13px;
+    color: #CB80AB;
+    font-weight: bold;
+}
+
+.pahang_text {
+    font-size: 13px;
+    color: #5A72A0;
+    font-weight: bold;
+}
+
+.terengganu_text {
+    font-size: 13px;
+    color: #A66E38;
+    font-weight: bold;
+}
+
+.bold_text {
+    font-size: 13px;
+    font-weight: bold;
 }
