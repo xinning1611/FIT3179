@@ -80,7 +80,7 @@
                   "field": "total_arrivals",
                   "type": "quantitative",
                   "format": ",",
-                  "title": "Visitor Counts"
+                  "title": "Total Arrivals"
               }
           ]
       }
