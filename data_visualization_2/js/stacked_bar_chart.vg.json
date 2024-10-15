@@ -27,7 +27,7 @@
           "aggregate": "sum",
           "field": "arrivals",
           "type": "quantitative",
-          "title": "Total Visitor",
+          "title": "Total Count",
           "scale": {
             "domain": [0, 35000000]
           },
