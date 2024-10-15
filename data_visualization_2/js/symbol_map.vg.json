@@ -1,10 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 800,
+  "width": "container",
   "height": 500,
-  "title": {
-    "text": "World Distribution of Foreign Arrivals to Malaysia",
-    "fontSize": 15
+  "autosize": {
+    "type": "fit", 
+    "contains": "padding"
   },
   "view": {
     "stroke": null
@@ -16,14 +16,14 @@
         "url": "https://raw.githubusercontent.com/xinning1611/FIT3179/refs/heads/main/week9_homework/js/oceans.topojson",
         "format": {"type": "topojson", "feature": "oceans"}
       },
-      "mark": {"type": "geoshape", "fill": "#E1EEFF"}
+      "mark": {"type": "geoshape", "fill": "#E9F6FF"}
     },
     {
       "data": {
         "url": "https://raw.githubusercontent.com/xinning1611/FIT3179/refs/heads/main/week9_homework/js/WorldMapWithGraticules.topojson",
         "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
       },
-      "mark": {"type": "geoshape", "fill": "#babfc4", "stroke": "white"}
+      "mark": {"type": "geoshape", "fill": "#FFF5CD", "stroke": "black"}
     },
     {
       "data": {
@@ -34,24 +34,39 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/xinning1611/FIT3179/refs/heads/main/week9_homework/data/arrival_lat_long.csv"
+        "url": "https://raw.githubusercontent.com/xinning1611/FIT3179/refs/heads/main/data_visualization_2/data/arrival_country.csv"
       },
-      "mark": {"type": "circle"}, 
+      "mark": {"type": "circle", "opacity": 0.9}, 
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"},
         "size": {
           "field": "total_arrival",
           "type": "quantitative",
-          "title": "Arrival Counts"
+          "title": "Visitor Counts", 
+          "scale": {
+            "domain": [0, 3000, 300000, 3000000], 
+            "range": [5, 15, 50, 100, 350]
+          },
+          "legend": {
+            "title": "Visitor Counts", 
+            "values": [0, 30000, 3000000, 30000000], 
+            "orient": "bottom", 
+            "titleOrient": "left",
+            "direction": "horizontal", 
+            "offset": 3
+          }
         },
-        "color": {"value": "black"},
+        "color": {
+          "condition": {"test": "datum.name === 'Singapore'", "value": "#759ECD"},
+          "value": "#759ECD"
+        },
         "tooltip": [
-          {"field": "country", "type": "nominal", "title": "Country"},
+          {"field": "name", "type": "nominal", "title": "Country"},
           {
             "field": "total_arrival",
             "type": "quantitative",
-            "title": "Total Number of Arrivals", 
+            "title": "Visitor Counts", 
             "format": ","
           }
         ]
@@ -67,18 +82,18 @@
           "sort": [{"field": "total_arrival", "order": "descending"}]
         }, 
         {"filter": "datum.ranking == 1"}, 
-        {"calculate": "'Most of the visitors; came from Singapore'", "as": "text_annotation_raw"}, 
+        {"calculate": "'Most of the visitors; come from Singapore'", "as": "text_annotation_raw"}, 
         {"calculate": "split(datum.text_annotation_raw, ';')", "as": "text_annotation"}
       ],
       "mark": {
         "type": "text",
-        "dx": 200,
-        "dy": 20,
+        "dx": 225,
+        "dy": 25,
         "fontSize": 10,
         "fontWeight": "bold",
-        "color": "orangered"
+        "color": "#759ECD"
       },
-      "encoding": {"text": {"field": "text_annotation"}}
+      "encoding": {"text": {"field": "text_annotation"}} 
     }
   ]
 }
