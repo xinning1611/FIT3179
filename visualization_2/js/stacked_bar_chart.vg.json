@@ -1,0 +1,77 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/xinning1611/FIT3179/refs/heads/main/data_visualization_2/data/top10_gender_breakdown.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "stroke": "black",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "name",
+          "type": "nominal",
+          "title": "Country of Visitor",
+          "sort": "-y", 
+          "axis": {
+            "labelFontSize": 10,
+            "titleFontSize": 12
+          }
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "arrivals",
+          "type": "quantitative",
+          "title": "Total Visitor",
+          "scale": {
+            "domain": [0, 35000000]
+          },
+          "axis": {
+            "tickCount": 10,
+            "format": "~s", 
+            "labelFontSize": 10,
+            "titleFontSize": 12
+          }
+        },
+        "color": {
+          "field": "gender",
+          "type": "nominal",
+          "title": "Gender",
+          "scale": {
+            "range": ["#FFC0D9", "#C4D7FF"]
+          },
+          "legend": {
+            "orient": "top-right", 
+            "direction": "horizontal",
+            "titleOrient": "left",
+            "labelFontSize": 12,
+            "title": "Gender"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "name",
+            "type": "nominal",
+            "title": "Country"
+          },
+          {
+            "field": "gender",
+            "type": "nominal",
+            "title": "Gender"
+          },
+          {
+            "field": "arrivals",
+            "type": "quantitative",
+            "format": ",",
+            "title": "Visitor Counts"
+          }
+        ]
+      }
+    }
+  ]
+}

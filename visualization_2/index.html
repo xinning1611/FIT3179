@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Foreign Arrivals in Malaysia</title>
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    
+    <!-- CSS file -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+    
+</head>
+<body>
+
+  <div class="container">
+    <div class="card">
+        <h1>Foreign Arrivals in <span class="malaysia_text" style="font-size:45px;">Malaysia</span></h1>
+        <h3>Analysis of Trend From 2020 to 2024</h3>
+    </div>
+
+    <div class="card">
+      <h2 class="text-center">World Distribution of Foreign Arrivals to Malaysia</h2>
+      <div class="card-body flex-container">
+        <div style="flex: 6;">
+          <div id="symbol_map" style="width: 100%; height: auto; margin: auto;"></div>
+        </div>
+        </div>
+      </div>
+
+    <div class="card">
+      <h2 class="text-center">Gender Breakdown of Top 10 Arrival Countries</h2>
+      <div class="card-body flex-container">
+        <div style="flex: 5;">
+          <div id="stacked_bar_chart" style="width: 100%; height: auto; margin: auto; margin-right: 13px;"></div>
+          <div style="display: flex; align-items: center; padding-bottom: 15px;"></div>
+        </div>
+        <div style="flex: 4; padding-left: 15px; text-align: justify;">
+          <p style="margin-top: 80px; margin-right: 13px;">
+            Most foreign visitors come from 
+            <span class="bold_text">Asian countries</span>, except for 
+            <span class="bold_text">Australia</span>.
+            <span class="singapore_text">Singapore</span> 
+            has the highest total number of visitors to Malaysia at 
+            <span class="bold_text">34,496,707</span>, 
+            contributing a significant portion of the total foreign arrivals to 
+            <span class="malaysia_text">Malaysia</span>. 
+            <br><br>
+            The gender distribution among visitors from the top 10 countries that have highest visitor counts to 
+            <span class="malaysia_text">Malaysia</span> is relatively balanced. 
+            However, there are notable disparities for 
+            <span class="bold_text">India</span> and 
+            <span class="bold_text">Bangladesh</span>, 
+            where the number of 
+            <span class="male_text">male</span>
+            visitors 
+            <span class="bold_text">significantly exceeds</span> the number of 
+            <span class="female_text">female</span> visitors.              
+          </p>
+          <h4>You may hover over to the bars to view arrival counts for male and female for different countries. </h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="text-center">Popular State for Foreign Arrivals in Malaysia</h2>
+      <div class="card-body flex-container">
+        <div style="flex: 3; padding-left: 50px; padding-right: 50px; text-align: justify; margin-top: 20px;">
+          <p style="margin-top: 70px; margin-right: 16px;">
+            There is a total of 
+            <span class="bold_text">70,755,895</span> foreign arrivals from 
+            <span class="bold_text">2020 to 2024</span>. 
+            The <span class="bold_text">largest</span> portion of foreign visitors visited 
+            <span class="johor_text">Johor</span>, with a total of 
+            <span class="bold_text">39,921,317</span> visitors. 
+            Other states such as 
+            <span class="selangor_text">Selangor</span>, 
+            <span class="sarawak_text">Sarawak</span>, and 
+            <span class="kedah_text">Kedah</span>
+            also show high number of foreign visitors. 
+            <br><br>
+            <span class="pahang_text">Pahang</span> and 
+            <span class="terengganu_text">Terengganu</span> have the 
+            <span class="bold_text">lowest</span> share of foreign arrivals, 
+            with only <span class="bold_text">18,038</span> and 
+            <span class="bold_text">263</span> respectively, 
+            therefore they are hardly visible in the chart.            
+          </p>
+          <h4>Select a state on the legend to view the state sector. </h4>
+        </div>
+        <div style="flex: 3; margin-left: auto; padding-left: 60px; padding-right: 20px;">
+          <div id="donut_chart" style="width: 100%; height: auto; margin: auto; margin-right: 0;"></div>
+          <div style="display: flex; align-items: center; padding-bottom: 15px;"></div>
+        </div>
+      </div>
+      </div>
+
+      <div class="card">
+        <h2 class="text-center">State Popularity Rankings Over Years (2020 to 2024)</h2>
+        <div class="card-body" style="display: flex; justify-content: center; align-items: center;">
+          <div style="flex: 4;">
+            <div id="bump_chart" style="width: 100%; height: auto; padding-left: 20px;"></div>
+            <div style="display: flex; align-items: center; padding-bottom: 15px;"></div>
+          </div>
+          <div style="flex: 3; padding-left: 50px; padding-right: 20px; text-align: justify;">
+            <p style="margin-right: 13px;">
+              <span class="johor_text">Johor</span> and 
+              <span class="selangor_text">Selangor</span> consistently ranked as the 
+              <span class="bold_text">top two states</span> for foreign arrivals throughout the years, 
+              reflecting their status as a top destination for foreign arrivals.  
+              Although there was a 
+              <span class="bold_text">drop in number in 2021</span> for 
+              <span class="johor_text">Johor</span>, but it still remain a high foreign visitors number throughout the years. 
+              <br><br>
+              There were 
+              <span class="bold_text">fluctuates in most rankings in 2020</span>, which is impacted by the 
+              <span class="bold_text">COVID-19 pandemic</span>
+              as many states show a decline in their rankings. 
+              There is not much changes 
+              <span class="bold_text">between 2022 and 2024</span> where most rankings are remained.      
+            </p>
+            <h4>Select a state from the legend to view its ranking, or you may use the slider to view different rankings across the years.</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="text-center">Monthly Foreign Arrivals to Malaysia by State</h2>
+        <div class="card-body flex-container">
+          <div style="flex: 3; padding-left: 50px; padding-right: 50px; text-align: justify;">
+            <p style="margin-top: 70px; margin-right: 20px;">
+              Most states have a <span class="bold_text">peak</span> in foreign arrivals in 
+              <span class="bold_text">January</span>, possibly
+              driven by holidays, festivals, and favorable weather conditions. 
+              In contrast, <span class="bold_text">July</span> has the 
+              <span class="bold_text">lowest</span> visitors count which potentially due to weather patterns and 
+              lack of global holidays from other countries. 
+              Visitor numbers <span class="bold_text">rise</span> again 
+              <span class="bold_text">toward the end of the year</span> which is likely due to year-end holidays. 
+              <br><br>
+              Exceptions such as 
+              <span class="sembilan_text">Negeri Sembilan</span>, 
+              <span class="pahang_text">Pahang</span>, and 
+              <span class="terengganu_text">Terengganu</span>, follow a different pattern, 
+              with <span class="bold_text">peaks in March and May</span>.   
+              
+              <h4>Select a state using the filter to view trend for a particular state.</h4>          
+            </p>
+          </div>
+          <div style="flex: 3;">
+            <div id="line_chart" style="width: 100%; height: auto; margin: auto; padding-right: 20px;"></div>
+            <div style="display: flex; align-items: center; padding-right: 50px; padding-bottom: 15px;"></div>
+          </div>
+        </div>
+
+  </div>
+
+    <h4>
+      Created and Designed By: Chew Xin Ning<br>
+      Last Updated On: 15th October 2024<br>
+      Data Sourced From: The Immigration Department of Malaysia<br>
+      Data Source Link: <a href="https://data.gov.my/data-catalogue/arrivals_soe" target="_blank">https://data.gov.my/data-catalogue/arrivals_soe</a>
+      (Last Updated On: 31st July 2024)
+    </h4>
+  </div>
+
+<script type="text/javascript">
+  var specVisSymbolMap = "js/symbol_map.vg.json";
+  vegaEmbed('#symbol_map', specVisSymbolMap, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  var specVisStacked = "js/stacked_bar_chart.vg.json";
+  vegaEmbed('#stacked_bar_chart', specVisStacked, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  var specVisDonut = "js/donut_chart.vg.json";
+  vegaEmbed('#donut_chart', specVisDonut, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  var specVisBump = "js/bump_chart.vg.json";
+  vegaEmbed('#bump_chart', specVisBump, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  var specVisLine = "js/line_chart.vg.json";
+  vegaEmbed('#line_chart', specVisLine, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+
+</body>
+</html>
